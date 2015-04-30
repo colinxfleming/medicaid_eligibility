@@ -39,6 +39,7 @@ group :test do
 	gem 'mini_backtrace'
 	gem 'faker'
 	gem 'sqlite3'
+	gem 'httparty'
 end
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
