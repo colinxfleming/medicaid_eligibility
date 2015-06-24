@@ -12,19 +12,7 @@ class ApplicationParserTest < ActionDispatch::IntegrationTest
 	include ApplicationParser 
 
 	@fixtures = load_fixtures
-
-	# making an adhoc setup and teardown
-	def setup_app(app)
-		@json_application = app[:application]
-		read_json!
-	end
-
-	# restore to default
-	def teardown_app(app) 
-		app = reload_fixture app[:name]
-		setup_app app
-	end
-
+	
 	@fixtures.each do |app|
 		test "make sure fixtures parse right #{app[:name]}" do 
 			# check that app json is equal to json application. Kind of a stupid safety check 

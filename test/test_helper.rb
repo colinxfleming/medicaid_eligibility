@@ -62,3 +62,15 @@ def reload_fixture(fixture_name)
 	end
 	return fixture 
 end
+
+# making an adhoc setup and teardown to use
+def setup_app(app)
+	@json_application = app[:application]
+	read_json!
+end
+
+# restore to default (in theory)
+def teardown_app(app) 
+	app = reload_fixture app[:name]
+	setup_app app
+end
